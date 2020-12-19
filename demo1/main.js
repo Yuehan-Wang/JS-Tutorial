@@ -5,8 +5,8 @@ let isEqual0 = i ===10;//also the type
 console.log(isEqual,isEqual0);
 
 //variable
-let candidate = "ashley";
-const mySchool = 'UChicago';
+let candidate = "ashley"
+const mySchool = 'UChicago'
 
 //class
 let student = {
@@ -91,7 +91,7 @@ if (x == 20){
     console.log("x is less than 20");
 }
 
-let y = 30;
+let y = 30
 if (x == 20 || y == 30){
     console.log("x equals 20 or y equals 30");
 }else if(x == 10 && y == 30){
@@ -99,7 +99,7 @@ if (x == 20 || y == 30){
 }
 
 //ternary operator 
-const color = x > 5? "red" : "blue"; 
+const color = x > 5? "red" : "blue"
 // ? is the ternart operator
 console.log(color);
 
@@ -162,7 +162,7 @@ toDos.forEach((todo) => console.log(todo));
  }
 
  //instantiate object
- const yuehan = new person("Yuehan","Wang","2001-11-30");
+ const yuehan = new person("Yuehan","Wang","2001-11-30")
  console.log(yuehan.dob);
  console.log(yuehan.getBirthYear());
 
@@ -179,13 +179,52 @@ toDos.forEach((todo) => console.log(todo));
      }
  }
 
+ //dom
+
  //select single element
- console.log(document.getElementById("name"));
- console.log(document.querySelector(".formSection"));
- const singleItem = document.querySelector(".listedItem");
+ console.log(document.getElementById("name"))
+ console.log(document.querySelector(".formSection"))
+ const singleItem = document.querySelector(".listedItem")
  console.log(singleItem);
 
  //select multi element
- console.log(document.querySelectorAll(".listedItem"));
- const items = document.querySelectorAll(".listedItem");
+ console.log(document.querySelectorAll(".listedItem"))
+ const items = document.querySelectorAll(".listedItem")
 items.forEach((item)=>console.log(item));
+
+//add element
+//create new element
+const body = document.body;
+body.append("this is append")
+//can append everything, more than 1 thing at a time
+const div = document.createElement("div")
+body.appendChild(div)
+div.innerText = "this is the created div appended using apeendChild"
+div.innerHTML = "<strong>make the text bold</strong>"
+
+const strong = document.createElement("strong")
+strong.innerText = " this is strong"
+div.append(strong)
+//can only append elements, 1 thing at a time
+
+//attribute
+const title = document.getElementsByClassName("title")
+title.id = "testing";
+
+//remove element
+const removeTest = document.getElementById("#testing")
+removeTest.remove();
+
+const text = document.querySelector(".title");
+const changeColor = document.querySelector(".colorChangeBtn");
+
+text.style.color = "red";
+text.style.backgroundColor = "blue";
+
+//create classes
+text.classList.add("change");//classList find all the classes the text is at
+
+//event listener
+changeColor.addEventListener("click",function(){
+   text.classList.toggle("change")
+})//only function when clicked (call-back funtion)
