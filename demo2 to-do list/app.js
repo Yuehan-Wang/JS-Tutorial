@@ -8,12 +8,12 @@ const filterOption = document.querySelector(".filter-todo");
 //EVENT LISTENER
 todoButton.addEventListener("click",addTodo);
 todoList.addEventListener("click",deleteCheck);
-filterOption.addEventListener("click",filterTodo);
+filterOption.addEventListener("change",filterTodo);
 
 
 //FUNCTIONS
 function addTodo(event){
- event.preventDefault();
+ event.preventDefault(); //stop refresh page when adding new element
  const todoDiv = document.createElement('div');
  todoDiv.classList.add("todo");
  //inserting new to-dos
@@ -23,7 +23,15 @@ function addTodo(event){
  todoDiv.appendChild(newTodo);
  //checke button
  const completeButton = document.createElement("button");
+
  completeButton.innerHTML = '<i class = "fas fa-check"></i>';//set attribute?
+ /*
+  same as
+  const buttonIcon = document.createElement("i")
+  buttonIcon.classList.add("fas")
+  buttonIcon.classList.add("fa-check")
+  completeButton.append(buttonIcon)
+ */
  completeButton.classList.add("complete-btn");
  todoDiv.appendChild(completeButton);
  //delete button
@@ -58,6 +66,9 @@ function deleteCheck(e){
 function filterTodo(e){
     const todos = todoList.childNodes;
       todos.forEach(function(todo) {
+        if(todo.item[0] == todo){
+          return;
+        }
         switch(e.target.value) {
             case "all": 
              todo.style.display = "flex";
@@ -65,16 +76,20 @@ function filterTodo(e){
             case "completed":
              if (todo.classList.contains("completed")){
                   todo.style.display = "flex";
+                  break;
                   } 
                 else {
                   todo.style.display = "none";
+                  break;
                  }
            case "in-progress":
              if (!todo.classList.contains("completed")){
                   todo.style.display = "flex";
+                  break;
                   } 
                 else {
                   todo.style.display = "none";
+                  break;
                  }
             }
             }

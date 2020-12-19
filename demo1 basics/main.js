@@ -56,6 +56,8 @@ for(let todo of toDos){
 toDos.forEach(function(todo){
     console.log("forEach: " + todo.morning);
 });
+//no return value
+//can't be assigned
 
 const toDosNoon = toDos.map (function(todo){
     return todo.noon;

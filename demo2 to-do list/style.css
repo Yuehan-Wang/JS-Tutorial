@@ -10,6 +10,14 @@ body{
     font-family: "preconnect",sans-serif;
     min-height: 100vh;
 }
+/*
+px：对应 实际像素 
+pt: 绝对 大于pt
+em: 相对于*最近parent width
+rem: 相对于*最外层parent width
+vh：window inner-height/100
+vw：window inner-width/100
+*/
 
 header{
     font-size: 1.5rem;
