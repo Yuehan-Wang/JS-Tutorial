@@ -66,7 +66,7 @@ function deleteCheck(e){
 function filterTodo(e){
     const todos = todoList.childNodes;
       todos.forEach(function(todo) {
-        if(todo.item[0] == todo){
+        if(todos.item(0) == todo){
           return;
         }
         switch(e.target.value) {
