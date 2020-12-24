@@ -151,7 +151,7 @@ console.log(deduce0(2));
 
 toDos.forEach((todo) => console.log(todo));
 
-//object oriented programming
+//object-oriented programming
 //constructor function
  function person(firstName,lastName,dob){
      this.firstName = firstName;
