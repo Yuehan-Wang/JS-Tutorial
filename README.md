@@ -1,5 +1,5 @@
 # JavaScript-Tutorial
 
-I made this introductory course on HTML, CSS and JavaScript for CWA students. 
+I made this introductory course on React for CWA students. 
 
 Yuehan Wang
